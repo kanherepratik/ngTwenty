@@ -1,0 +1,52 @@
+@import url('reset.css');
+@import url('bootstrap.min.css');
+
+.wrapper {
+        height: 100%;
+}
+tbody {    
+        -webkit-transition : 1.5s ease-in-out;
+           -moz-transition: 1.5s ease-in-out;
+             -o-transition: 1.5s ease-in-out;
+                transition: 1.5s ease-in-out;
+}
+ .box {
+    border: 1px solid;
+    height: 50px;
+    width: 50px;
+    margin: 2px 5px 0px 5px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 10px;
+    line-height: 46px;
+    color : #fff;
+    display: inline-block;
+    cursor: pointer;
+}
+.box:after {
+    cursor: pointer;
+}
+
+.boardbox {
+    border: 1px solid;
+    width: 424px;
+    height: 635px;
+}
+.vis-hidden {
+    visibility: hidden;
+}
+.progress {
+    margin-top: 10px;
+    margin-bottom:10px; 
+    width: 418px;
+
+}
+#cover {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 1; /* make sure logout_box has a z-index of 2 */
+	background-color:#fff;
+	opacity: 0.3;
+    top: 40px;
+}

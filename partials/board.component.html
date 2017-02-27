@@ -1,0 +1,37 @@
+<div class="boardbox" ng-disabled="true">
+	<div class="score">
+     <button class="btn btn-info" type="button">
+        Score <span class="badge">{{$ctrl.score}}</span>
+        </button>
+		<button class="btn btn-info" type="button">
+       High Score <span class="badge">{{$ctrl.highScore}}</span>
+        </button>
+		<button ng-click="$ctrl.pause()" class="btn btn-info" ng-show="!$ctrl.isPaused"><i class="fa fa-pause-circle fa-lg" aria-hidden="true"></i></button>
+		<button ng-click="$ctrl.play()" class="btn btn-info" ng-show="$ctrl.isPaused"><i class="fa fa-play-circle fa-lg" aria-hidden="true"></i></button>
+		<button ng-click="$ctrl.restart()" class="btn btn-info"><i class="fa fa-refresh fa-lg" aria-hidden="true"></i></button>		
+</div>
+
+	<div class="progress">
+		<div class="progress-bar progress-bar-striped active" role="progressbar"  ng-style="$ctrl.myStyle">
+			<span class="sr-only">45% Complete</span>
+		</div>
+	</div>
+
+	<table class="table-responsive">
+		<tbody ng-style="{'transform':$ctrl.translate}" class="bodyHeight">
+			<tr  ng-repeat="components in $ctrl.layout">
+				<td class = "box"  ng-class="{'vis-hidden': component === undefined}" ng-style="{'background-color':$ctrl.color[component]}" ng-repeat ="component in components track by $index" ui-draggable="true" drag="component"
+             on-drop-success="$ctrl.dropSuccessHandler($event,$index,components)" ui-on-Drop="$ctrl.onDrop($event,$data,components,$index)">{{component}}</td>
+			</tr>
+		</tbody>
+	</table>
+	<div id="cover" ng-show="$ctrl.isPaused"></div>
+</div>
+
+ 
+    
+
+
+
+
+
